@@ -4,22 +4,23 @@ public class BruteForceAlgo
 {
 	public static Scanner sc = new Scanner(System.in);
 	
-	public static void main(char[] fileArray, char[] genomeArray)
+	public static void main(String fileString, String genome)
 	{
 		String position = "";
 		int total = 0;
 
-		for(int i = 0; i < fileArray.length; i++)
+		for(int i = 0; i < fileString.length(); i++)
 		{
-			if(fileArray[i] == genomeArray[0])
+			if(fileString.charAt(i) == genome.charAt(0))
 			{
-				for(int j = 1; j < genomeArray.length; j++)
+				for(int j = 1; j < genome.length(); j++)
 				{
-					if(!(fileArray[i+j] == genomeArray[j]))
+					if(!(fileString.charAt(i + j) == genome.charAt(j)))
 					{
 						break;
 					}
-					if(j == genomeArray.length-1)
+					
+					else if(j == genome.length()-1)
 					{
 						position += i+1;
 						position += " ";
@@ -29,7 +30,7 @@ public class BruteForceAlgo
 			}
 		}
 		if(position.equals(""))
-			System.out.println("Not found!");
+			System.out.println("No occurrence!");
 		else
 		{
 			System.out.printf("Positions: %s\n", position);

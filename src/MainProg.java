@@ -9,8 +9,8 @@ public class MainProg
 	{
 		int option = 0;
 
-		char[] genomeArray = inputGenome();
-		char[] fileArray = inputFile();
+		String genomeArray = inputGenome();
+		String fileArray = inputFile();
 		
 		while(option != 2)
 		{
@@ -40,29 +40,27 @@ public class MainProg
 		System.out.println("2. Quit");
 	}
 
-	public static char[] inputGenome()
+	public static String inputGenome()
 	{
 		System.out.printf("Enter genome string:");
 		String genome = sc.nextLine();
-		char[] genomeArray = genome.toString().toCharArray();
-		return genomeArray;
+		return genome;
 	}
 	
-	public static char[] inputFile() throws Exception
+	public static String inputFile() throws Exception
 	{
 		System.out.printf("Enter file name:");
+		String fileString = "";
 		File file = new File(sc.nextLine());
 		Scanner fileSC = new Scanner(file);
-		StringBuilder fileContents = new StringBuilder();
 
 		fileSC.nextLine();
 		while(fileSC.hasNextLine())
 		{
-			fileContents.append(fileSC.nextLine());
+			fileString += fileSC.nextLine();
 		}
-		char[] fileArray = fileContents.toString().toCharArray();
 
 		fileSC.close();
-		return fileArray;
+		return fileString;
 	}
 }
