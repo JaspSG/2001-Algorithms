@@ -9,7 +9,7 @@ public class BruteForceAlgo
 		String position = "";
 		int total = 0;
 
-		for(int i = 0; i < (fileString.length() - pattern.length()); i++)
+		for(int i = 0; i < (fileString.length() - pattern.length() + 1); i++)
 		{
 			if(fileString.charAt(i) == pattern.charAt(0))
 			{
