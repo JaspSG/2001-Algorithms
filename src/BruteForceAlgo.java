@@ -4,23 +4,23 @@ public class BruteForceAlgo
 {
 	public static Scanner sc = new Scanner(System.in);
 	
-	public static void main(String fileString, String genome)
+	public static void main(String fileString, String pattern)
 	{
 		String position = "";
 		int total = 0;
 
-		for(int i = 0; i < fileString.length(); i++)
+		for(int i = 0; i < (fileString.length() - pattern.length()); i++)
 		{
-			if(fileString.charAt(i) == genome.charAt(0))
+			if(fileString.charAt(i) == pattern.charAt(0))
 			{
-				for(int j = 1; j < genome.length(); j++)
+				for(int j = 1; j < pattern.length(); j++)
 				{
-					if(!(fileString.charAt(i + j) == genome.charAt(j)))
+					if(!(fileString.charAt(i + j) == pattern.charAt(j)))
 					{
 						break;
 					}
 					
-					else if(j == genome.length()-1)
+					else if(j == pattern.length()-1)
 					{
 						position += i+1;
 						position += " ";

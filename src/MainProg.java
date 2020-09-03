@@ -9,8 +9,8 @@ public class MainProg
 	{
 		int option = 0;
 
-		String genomeArray = inputGenome();
-		String fileArray = inputFile();
+		String pattern = inputPattern();
+		String fileString = inputFile();
 		
 		while(option != 2)
 		{
@@ -20,7 +20,7 @@ public class MainProg
 			switch(option)
 			{
 			case 1: 
-				BruteForceAlgo.main(fileArray, genomeArray);
+				BruteForceAlgo.main(fileString, pattern);
 				break;
 			case 2: 
 				break;
@@ -40,11 +40,11 @@ public class MainProg
 		System.out.println("2. Quit");
 	}
 
-	public static String inputGenome()
+	public static String inputPattern()
 	{
-		System.out.printf("Enter genome string:");
-		String genome = sc.nextLine();
-		return genome;
+		System.out.printf("Enter search string:");
+		String pattern = sc.nextLine();
+		return pattern;
 	}
 	
 	public static String inputFile() throws Exception
