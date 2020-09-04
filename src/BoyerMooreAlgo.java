@@ -22,13 +22,15 @@ public class BoyerMooreAlgo {
         
     	// Initialize all occurrences as -1 
     	for (i = 0; i < nFullTextLength; i++) 
+    	{
     		badchar[i] = -1; 
-    
+    	}
     	// Fill the actual value of last occurrence 
     	// of a character 
-    	for (i = 0; i < mPatLength; i++) 
+    	for (i = 0; i < mPatLength; i++)
+    	{
     		badchar[(int) patternArray[i]] = i; 
-		
+    	}
     	// end of The preprocessing function for Boyer Moore's
 		//badCharHeuristic(patternArray, mPatLength, badchar, nFullText);
 		
