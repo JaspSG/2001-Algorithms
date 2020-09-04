@@ -22,7 +22,10 @@ public class MainProg
 			case 1: 
 				BruteForceAlgo.main(fileString, pattern);
 				break;
-			case 2: 
+			case 2:
+				BoyerMooreAlgo.main(fileString, pattern);
+				break;
+			case 3:
 				break;
 			default: 
 				System.out.println("Invalid option!");
@@ -37,7 +40,8 @@ public class MainProg
 	{
 		System.out.println("Choose Algorithm");
 		System.out.println("1. Brute Force");
-		System.out.println("2. Quit");
+		System.out.println("2. Boyer Moore");
+		System.out.println("3. Quit");
 	}
 
 	public static String inputPattern()
