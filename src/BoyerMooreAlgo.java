@@ -8,15 +8,11 @@ public class BoyerMooreAlgo
 		int badchar[] = new int[fileString.length()]; 
 		int shift = 0;
         
-    	for (int i = 0; i < fileString.length(); i++) 
-    	{
+    	for (int i = 0; i < fileString.length(); i++)
     		badchar[i] = -1; 
-    	}
     	
     	for (int i = 0; i < pattern.length(); i++)
-    	{
     		badchar[(int) pattern.charAt(i)] = i; 
-    	}
 		
 		while(shift <= (fileString.length() - pattern.length()))
 		{
@@ -32,14 +28,15 @@ public class BoyerMooreAlgo
 				total++;
 
 				if(shift + pattern.length() < fileString.length())
-				{
 					shift = shift + (pattern.length() - badchar[fileString.charAt(shift + pattern.length())]);
-				}
+				
 				else
 					shift++;
 			}
+			
 			else if(1 > (j - badchar[fileString.charAt(shift + j)]))
 					shift++;
+			
 			else
 				shift = shift + (j - badchar[fileString.charAt(shift + j)]);
 		}

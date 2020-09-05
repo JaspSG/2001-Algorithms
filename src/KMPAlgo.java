@@ -12,9 +12,8 @@ public class KMPAlgo
 		for(int i = 0; i < fileString.length(); i++)
 		{
 			if(fileString.charAt(i) == pattern.charAt(j))
-			{
 				j++;
-			}
+			
 			else if(j != 0)
 			{
 				j = lps[j - 1];
@@ -46,11 +45,13 @@ public class KMPAlgo
 				lps[i] = j + 1;
 				j++;
 			}
+			
 			else if(j != 0)
 			{
 				j = lps[j - 1];
 				i--;
 			}
+			
 			else
 				lps[i] = 0;
 		}
