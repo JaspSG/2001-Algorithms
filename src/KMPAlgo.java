@@ -15,13 +15,10 @@ public class KMPAlgo
 			{
 				j++;
 			}
-			else
+			else if(j != 0)
 			{
-				if(j != 0)
-				{
-					j = lps[j - 1];
-					i--;
-				}
+				j = lps[j - 1];
+				i--;
 			}
 			
 			if(j == pattern.length())
