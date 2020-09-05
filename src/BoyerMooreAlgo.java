@@ -38,13 +38,10 @@ public class BoyerMooreAlgo
 				else
 					shift++;
 			}
-			else 
-			{
-				if(1 > (j - badchar[fileString.charAt(shift + j)]))
+			else if(1 > (j - badchar[fileString.charAt(shift + j)]))
 					shift++;
-				else
-					shift = shift + (j - badchar[fileString.charAt(shift + j)]);
-			}
+			else
+				shift = shift + (j - badchar[fileString.charAt(shift + j)]);
 		}
 		
 		System.out.printf("Positions: %s\n", position);
