@@ -2,11 +2,11 @@ public class KMPAlgo
 {
 	public static void main(String fileString, String pattern)
 	{
-		int lps[] = new int[pattern.length()];
-		LPSArray(pattern, lps);
-		
 		String position = "";
 		int total = 0;
+		
+		int lps[] = new int[pattern.length()];
+		LPSArray(pattern, lps);
 		int j = 0;
 		
 		for(int i = 0; i < fileString.length(); i++)
