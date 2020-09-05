@@ -5,14 +5,14 @@ public class BoyerMooreAlgo
 		String position = "";
 		int total = 0;
 		
-		int badchar[] = new int[fileString.length()]; 
+		int badchar[] = new int[128]; 
 		int shift = 0;
         
-    	for (int i = 0; i < fileString.length(); i++)
-    		badchar[i] = -1; 
+    	for (int i = 0; i < 128; i++)
+    		badchar[i] = -1;
     	
     	for (int i = 0; i < pattern.length(); i++)
-    		badchar[(int) pattern.charAt(i)] = i; 
+    		badchar[pattern.charAt(i)] = i;
 		
 		while(shift <= (fileString.length() - pattern.length()))
 		{

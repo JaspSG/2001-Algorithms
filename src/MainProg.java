@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MainProg
@@ -55,20 +56,30 @@ public class MainProg
 		return pattern;
 	}
 	
-	public static String inputFile() throws Exception
+	public static String inputFile()
 	{
-		System.out.printf("Enter file name:");
-		String fileString = "";
-		File file = new File(sc.nextLine());
-		Scanner fileSC = new Scanner(file);
-
-		fileSC.nextLine();
-		while(fileSC.hasNextLine())
+		while(true)
 		{
-			fileString += fileSC.nextLine();
-		}
-
-		fileSC.close();
-		return fileString;
+			try 
+			{
+				System.out.printf("Enter file name:");
+				String fileString = "";
+				File file = new File(sc.nextLine());
+				Scanner fileSC;
+				fileSC = new Scanner(file);
+				fileSC.nextLine();
+				while(fileSC.hasNextLine())
+				{
+					fileString += fileSC.nextLine();
+				}
+	
+				fileSC.close();
+				return fileString;
+			} 
+			catch (FileNotFoundException e) 
+			{
+				System.out.println("File not found!");
+			}
+		}		
 	}
 }

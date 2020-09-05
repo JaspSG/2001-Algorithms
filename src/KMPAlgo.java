@@ -22,10 +22,10 @@ public class KMPAlgo
 			
 			if(j == pattern.length())
 			{
+				j = lps[j - 1];
 				position += i - j + 1;
 				position += " ";
 				total++;
-				j = lps[j - 1];
 			}	
 		}
 		
