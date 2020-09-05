@@ -37,35 +37,6 @@ public class KMPAlgo
 		System.out.printf("Total: %d\n", total);
 	}
 	
-	public static void LPSArray(String pattern, int lengthPattern, int lps[])
-	{
-		int length = 0;
-		int i = 1;
-		lps[0] = 0;
-		
-		while(i<lengthPattern)
-		{
-			if(pattern.charAt(length) == pattern.charAt(i)) 
-			{
-				lps[i] = length+1;
-				length++;
-				i++; 
-			}
-			else
-			{
-				if(length!= 0)
-				{
-					length = lps[length-1];
-				}
-				else
-				{
-					lps[i] = 0;
-					i++;
-				}
-			}
-		}
-	}
-	
 	public static void LPSArray(String pattern, int lps[])
 	{
 		int j = 0;
