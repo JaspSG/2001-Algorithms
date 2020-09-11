@@ -8,11 +8,11 @@ public class BoyerMooreAlgo
 		int badchar[] = new int[128]; 
 		int shift = 0;
         
-    	for (int i = 0; i < 128; i++)
-    		badchar[i] = -1;
+    		for (int i = 0; i < 128; i++)
+    			badchar[i] = -1;
     	
-    	for (int i = 0; i < pattern.length(); i++)
-    		badchar[pattern.charAt(i)] = i;
+    		for (int i = 0; i < pattern.length(); i++)
+    			badchar[pattern.charAt(i)] = i;
 		
 		while(shift <= (fileString.length() - pattern.length()))
 		{
