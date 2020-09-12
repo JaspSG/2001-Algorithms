@@ -61,11 +61,8 @@ public class newalgo{
 
             for(int j=(0+jump); j<(0+jump+3); j++)
             {
-                System.out.println(fileString.charAt(fileIndex3));
-                System.out.println(pattern.charAt(j));
                 if(fileString.charAt(fileIndex3) != pattern.charAt(j))
                 {
-                    System.out.println("break");
                     break;
                 }
                 else if(j == patternLength -1) // due to index
