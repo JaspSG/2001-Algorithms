@@ -13,7 +13,7 @@ public class MainProg
 		String pattern = inputPattern();
 		String fileString = inputFile();
 		
-		while(option != 4)
+		while(option != 5)
 		{
 			menu();
 			System.out.printf("Option: ");
@@ -30,6 +30,9 @@ public class MainProg
 				BoyerMooreAlgo.main(fileString, pattern);
 				break;
 			case 4:
+				newalgo.main(fileString, pattern);
+				break;
+			case 5:
 				break;
 			default: 
 				System.out.println("Invalid option!");
@@ -46,7 +49,8 @@ public class MainProg
 		System.out.println("1. Brute Force");
 		System.out.println("2. KMP");
 		System.out.println("3. Boyer Moore");
-		System.out.println("4. Quit");
+		System.out.println("4. New Algorithm");
+		System.out.println("5. Quit");
 	}
 
 	public static String inputPattern()

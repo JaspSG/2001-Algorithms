@@ -2,6 +2,8 @@ public class BoyerMooreAlgo
 {
 	public static void main(String fileString, String pattern) 
 	{
+		long startTime = System.nanoTime(); // start time
+
 		String position = "";
 		int total = 0;
 		
@@ -40,7 +42,10 @@ public class BoyerMooreAlgo
 			else
 				shift = shift + (j - badchar[fileString.charAt(shift + j)]);
 		}
-		
+
+		long endTime = System.nanoTime();
+		long executionTime = endTime - startTime;
+		System.out.println("Execution Time " + executionTime + "ns");
 		System.out.printf("Positions: %s\n", position);
 		System.out.printf("Total: %d\n", total);
 	}
