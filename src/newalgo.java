@@ -1,3 +1,6 @@
+// assuming that the nucleotides come in a pair of 3 (based on biology)
+// thus this algorithm will make use of the knowledge and optimise the algorithm
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +21,7 @@ public class newalgo{
         int patternLength = pattern.length();
         int a = patternLength / 3;
 
-        int jump = 3*(a-1);
+        int jump = 3*(a-1); // mathematical formula 
 
 
         String endCodon = pattern.substring(0+jump, jump+3);
@@ -46,7 +49,6 @@ public class newalgo{
                 break;
             }
         }
-
         // Compare all the start codon
         for(int i=0; i<startCodonArray.size(); i++)
         {
