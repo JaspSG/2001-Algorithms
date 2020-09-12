@@ -8,6 +8,7 @@ public class newalgo{
     {
         long startTime = System.nanoTime(); // start time
 
+
         // extract startCodon and endCodon
         String startCodon = pattern.substring(0,3);
 
@@ -16,7 +17,9 @@ public class newalgo{
         // startIndex + 3(a-1) = endCondon-startIndex
         int patternLength = pattern.length();
         int a = patternLength / 3;
+
         int jump = 3*(a-1);
+
 
         String endCodon = pattern.substring(0+jump, jump+3);
 
@@ -54,15 +57,20 @@ public class newalgo{
 
             fileIndex = startCodonArray.get(i); // set fileindex to startindex of startcodon
             fileIndex2 = fileIndex + jump;  // set fileindex2 to startindex of endcodon
+            int fileIndex3 = startCodonArray.get(i) + jump;
 
             for(int j=(0+jump); j<(0+jump+3); j++)
             {
-                if(fileString.charAt(fileIndex2) == pattern.charAt(j))
+                System.out.println(fileString.charAt(fileIndex3));
+                System.out.println(pattern.charAt(j));
+                if(fileString.charAt(fileIndex3) != pattern.charAt(j))
                 {
-                    continue;
+                    System.out.println("break");
+                    break;
                 }
                 else if(j == patternLength -1) // due to index
                 {
+
                     // extract substring and bruteforce check the remaining string
                     // String comparisonString = fileString.substring(fileIndex, fileIndex2+3);
 
@@ -70,13 +78,23 @@ public class newalgo{
                     // endindex = fileIndex2 - 1
                     String comparisonString = fileString.substring(fileIndex+3, fileIndex2);
 
+
                     int subpatternstart = 3; //patternstart
                     int textpatternstart = fileIndex+3;
 
                     int subpatternend = jump-1;
 
+                    if(comparisonString.length() == 0)
+                    {
+                        System.out.println("here");
+                        position += fileIndex + 1;
+                        position += " ";
+                        total ++;
+                    }
+
                     for(int k = 0; k<comparisonString.length(); k++)
                     {
+                        System.out.println("here");
                         if(fileString.charAt(textpatternstart) != pattern.charAt(subpatternstart))
                         {
                             break;
@@ -94,6 +112,11 @@ public class newalgo{
                         }
                     }
                 }
+                else if(fileString.charAt(fileIndex3) == pattern.charAt(j))
+                {
+                    fileIndex3++;
+                    continue;
+                }
             }
 
 
@@ -105,6 +128,4 @@ public class newalgo{
         System.out.printf("Total: %d\n", total);
 
     }
-
-
 }
