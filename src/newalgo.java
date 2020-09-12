@@ -83,7 +83,6 @@ public class newalgo{
 
                     if(comparisonString.length() == 0)
                     {
-                        System.out.println("here");
                         position += fileIndex + 1;
                         position += " ";
                         total ++;
@@ -91,7 +90,6 @@ public class newalgo{
 
                     for(int k = 0; k<comparisonString.length(); k++)
                     {
-                        System.out.println("here");
                         if(fileString.charAt(textpatternstart) != pattern.charAt(subpatternstart))
                         {
                             break;
