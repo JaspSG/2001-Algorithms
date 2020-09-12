@@ -1,42 +1,23 @@
-// assuming that the nucleotides come in a pair of 3 (based on biology)
-// thus this algorithm will make use of the knowledge and optimise the algorithm
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class newalgo{
+public class newalgo1{
 
     public static void main(String fileString, String pattern)
     {
         long startTime = System.nanoTime(); // start time
-
-
-        // extract startCodon and endCodon
         String startCodon = pattern.substring(0,3);
-
-        // formula to find end index:
-        // patternlength mod 3 = a
-        // startIndex + 3(a-1) = endCondon-startIndex
         int patternLength = pattern.length();
         int a = patternLength / 3;
-
         int jump = 3*(a-1); // mathematical formula
-
-
         String endCodon = pattern.substring(0+jump, jump+3);
-
-        // store all occurence
-        ArrayList<Integer> startCodonArray = new ArrayList<Integer>();
-
-        //
+        ArrayList<Integer> startCodonArray = new ArrayList<Integer>(); // store all occurence
         String position = " ";
         int total = 0;
         int index = 0; // initialise to 0 to start
 
-        // Find all start index of start codon
-        // create index-array table
-        while(index<fileString.length())
+        while(index<fileString.length()) // create index-array table // Find all start index of start codon
         {
             int startindex = 0;
             startindex  =  fileString.indexOf(startCodon, index); //
@@ -49,18 +30,13 @@ public class newalgo{
                 break;
             }
         }
-        // Compare all the start codon
-        for(int i=0; i<startCodonArray.size(); i++)
+        for(int i=0; i<startCodonArray.size(); i++) // Compare all the start codon
         {
-            // check if endCodon matches
-            // initisalisation
             int fileIndex = 0; // start codon start index
             int fileIndex2 = 0; // end codon start index
-
             fileIndex = startCodonArray.get(i); // set fileindex to startindex of startcodon
             fileIndex2 = fileIndex + jump;  // set fileindex2 to startindex of endcodon
             int fileIndex3 = startCodonArray.get(i) + jump;
-
             for(int j=(0+jump); j<(0+jump+3); j++)
             {
                 if(fileString.charAt(fileIndex3) != pattern.charAt(j))
@@ -69,18 +45,9 @@ public class newalgo{
                 }
                 else if(j == patternLength -1) // due to index
                 {
-
-                    // extract substring and bruteforce check the remaining string
-                    // String comparisonString = fileString.substring(fileIndex, fileIndex2+3);
-
-                    // startindex = fileIndex + 3
-                    // endindex = fileIndex2 - 1
                     String comparisonString = fileString.substring(fileIndex+3, fileIndex2);
-
-
                     int subpatternstart = 3; //patternstart
                     int textpatternstart = fileIndex+3;
-
                     int subpatternend = jump-1;
 
                     if(comparisonString.length() == 0)
@@ -89,7 +56,6 @@ public class newalgo{
                         position += " ";
                         total ++;
                     }
-
                     for(int k = 0; k<comparisonString.length(); k++)
                     {
                         if(fileString.charAt(textpatternstart) != pattern.charAt(subpatternstart))
@@ -115,8 +81,6 @@ public class newalgo{
                     continue;
                 }
             }
-
-
         }
         long endTime = System.nanoTime();
         long executionTime = endTime - startTime;
