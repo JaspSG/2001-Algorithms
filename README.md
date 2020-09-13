@@ -23,3 +23,4 @@ Wong Chin Hao <br>
 3. KMPAlgo.java: Stores the required programming logic for Brute Force Algorithm.
 3. BoyerMoore.java: Stores the required programming logic for Brute Force Algorithm. 
 4. newalgo.java: Stores the required programming logic for an algorithm that our group implemented / improved on.
+5. test.fna and graph.fna: Stores the test files. 
