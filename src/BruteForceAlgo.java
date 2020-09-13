@@ -31,13 +31,13 @@ public class BruteForceAlgo
 				}
 			}
 		}
+		long endTime = System.nanoTime();
+		long executionTime = endTime - startTime;
+		System.out.println("Execution Time " + executionTime + "ns");
 		if(position.equals(""))
 			System.out.println("No occurrence!");
 		else
 		{
-			long endTime = System.nanoTime();
-			long executionTime = endTime - startTime;
-			System.out.println("Execution Time " + executionTime + "ns");
 			System.out.printf("Positions: %s\n", position);
 			System.out.printf("Total: %d\n", total);
 		}

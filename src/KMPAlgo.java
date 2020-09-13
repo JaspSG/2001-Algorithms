@@ -34,8 +34,13 @@ public class KMPAlgo
 		long endTime = System.nanoTime();
 		long executionTime = endTime - startTime;
 		System.out.println("Execution Time " + executionTime + "ns");
-		System.out.printf("Positions: %s\n", position);
-		System.out.printf("Total: %d\n", total);
+		if(position.equals(""))
+			System.out.println("No occurrence!");
+		else
+		{
+			System.out.printf("Positions: %s\n", position);
+			System.out.printf("Total: %d\n", total);
+		}
 	}
 
 	public static void LPSArray(String pattern, int lps[])
