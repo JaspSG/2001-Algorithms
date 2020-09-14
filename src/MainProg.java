@@ -2,6 +2,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+// https://stackoverflow.com/questions/1770010/how-do-i-measure-time-elapsed-in-java
+// based on the article and our understanding, we decided to use nanoTime to calculate elapsed time for more accurate
+// analysis
+
+
 public class MainProg
 {
 	public static Scanner sc = new Scanner(System.in);

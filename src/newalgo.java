@@ -1,5 +1,6 @@
-// assuming that the nucleotides come in a pair of 3 (based on biology)
-// thus this algorithm will make use of the knowledge and optimise the algorithm
+// nucleotides / proteins come in a pair of 3 (based on biology)
+// each nucleotides sequence will have a start and stop codon (based on biology)
+// thus this algorithm will make use of the above knowledge and optimise the algorithm
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -11,7 +12,6 @@ public class newalgo{
     {
         long startTime = System.nanoTime(); // start time
 
-
         // extract startCodon and endCodon
         String startCodon = pattern.substring(0,3);
 
@@ -21,8 +21,7 @@ public class newalgo{
         int patternLength = pattern.length();
         int a = patternLength / 3;
 
-        int jump = 3*(a-1); // mathematical formula
-
+        int jump = 3*(a-1); // mathematical formula to derive the jump from start index start codon to start index of stop codon
 
         String endCodon = pattern.substring(0+jump, jump+3);
 

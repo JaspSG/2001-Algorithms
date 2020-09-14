@@ -1,4 +1,5 @@
-public class BoyerMooreAlgo 
+
+public class BoyerMooreAlgo
 {
 	public static void main(String fileString, String pattern) 
 	{
@@ -7,7 +8,7 @@ public class BoyerMooreAlgo
 		String position = "";
 		int total = 0;
 		
-		int badchar[] = new int[128]; 
+		int badchar[] = new int[128];  // Program can be optimised based on the 5 genes = just need to create 5 genes 
 		int shift = 0;
         
     		for (int i = 0; i < 128; i++)
