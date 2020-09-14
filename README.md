@@ -14,7 +14,7 @@ Wong Chin Hao <br>
 2. MainProg will promopt to enter the search string.
 3. Enter the pattern to search for this field.
 4. Next, the program will prompt user to enter the file name.
-5. Enter the file name in this field, which store the text file to be searched on (ensure that the file is in the same directory of the MainProg.java). if not, please enter the directory to the test file. e.g. "./TestFile/Length.fna"
+5. Enter the file name in this field, which store the text file to be searched on (ensure that the file is in the same directory of the MainProg.java). if not, please enter the directory to the test file. e.g. "./TestFile/Length.fna" (If running from command prompt, type in the full file path)
 6. After that, user will be able to key in the desired algorithms they want their pattern to be searched on. 
 
 # Files used # 
