@@ -1,4 +1,6 @@
-# CZ2001-Algorithms-Lab Project 1
+# CZ2001-Algorithms-Lab Project 1  
+
+This programme implements the differnt algorithms for DNA sequences string searching.  
 
 Done by: (SSP2) <br>
 Chan Zhao Hui <br>
